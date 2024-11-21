@@ -92,7 +92,7 @@ public class Dino : MonoBehaviour
         
         //if (Input.GetKeyDown(KeyCode.Space))
         //by default is left mouse button (or trigger? or key?, idk the right term here)
-        if (playerInput.actions["Shoot"].triggered && !PauseGame.isPaused)
+        if (playerInput.actions["Shoot"].triggered && !PauseGame.isPaused && !LevelTransitionStart.isInTransition)
         {
             if (PRenderer.flipX)
             {
