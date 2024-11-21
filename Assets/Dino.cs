@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Dino : MonoBehaviour
 {
@@ -21,17 +22,25 @@ public class Dino : MonoBehaviour
 
     public GameObject BubblePrefab;
     public float ShotSpeed;
+    
+    private PlayerInput playerInput;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         PRenderer = rb.GetComponent<SpriteRenderer>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
+        //supposedly this thing reads input from the "player input" object and spits out a vector2
+        Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
+        
+        
         //Sets the X movement equal to the speed in the positive or negative direction
-        movement.x = Input.GetAxis("Horizontal") * speed;
+        //movement.x = Input.GetAxis("Horizontal") * speed;
+        movement.x = input.x * speed;
 
         //checks if there is a collider on the "Ground" layer below the player
         //REMEMBER: All ground objs must be on the 3rd layer
@@ -57,7 +66,16 @@ public class Dino : MonoBehaviour
         }
 
         //Sets the Y movement to the Jump Force if either W or the UpArrow are pushed, and there is Ground below
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && GroundTouch)
+        /*if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && GroundTouch)
+        {
+            movement.y = jumpForce;
+        }
+        */
+        
+        //so I THINK this reads from "player input" object, and when you press the designated key that's assigned
+        //it will basically say "input triggered" and do things
+        //by default the key is space, space used for shoot MAKES NO SENSE 
+        if (playerInput.actions["Jump"].triggered && GroundTouch && !PauseGame.isPaused)
         {
             movement.y = jumpForce;
         }
@@ -72,7 +90,9 @@ public class Dino : MonoBehaviour
             PRenderer.flipX = false;
         }
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //by default is left mouse button (or trigger? or key?, idk the right term here)
+        if (playerInput.actions["Shoot"].triggered && !PauseGame.isPaused)
         {
             if (PRenderer.flipX)
             {
