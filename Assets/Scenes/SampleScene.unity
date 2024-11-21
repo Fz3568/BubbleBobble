@@ -682,7 +682,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 690190895482579582, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_Text
-      value: ' /A/S/D'
+      value: A,D
       objectReference: {fileID: 0}
     - target: {fileID: 690190895482579582, guid: f25dcd618d3acd64795bf8bb32edb6c9, type: 3}
       propertyPath: m_FontData.m_MaxSize
@@ -1304,8 +1304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1200.3, y: -578.32}
-  m_SizeDelta: {x: 2524.2, y: 1112.9}
+  m_AnchoredPosition: {x: 1117, y: -578.32}
+  m_SizeDelta: {x: 3076.5657, y: 1573.2047}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688476796
 MonoBehaviour:
