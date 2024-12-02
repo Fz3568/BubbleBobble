@@ -32,6 +32,6 @@ public class GameOverScreenScoreDisplay : MonoBehaviour
 
    void updateWinScore()
    {
-      textScoreWin.text = "Score: " + Dino.score.ToString("00");
+      textScoreWin.text = "Score: " + Dino.score.ToString();
    }
 }
