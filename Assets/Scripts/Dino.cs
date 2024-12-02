@@ -109,6 +109,7 @@ public class Dino : MonoBehaviour
 
         scoreTxt.text = $"Score: {score}0";
 
+
         if (score >= MaxScore)
         {
             Manager.YouWin();
