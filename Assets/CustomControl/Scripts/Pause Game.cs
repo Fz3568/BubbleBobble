@@ -34,11 +34,13 @@ public class PauseGame : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0;
+            Cursor.visible = true;
             canvas.enabled = true;
         }
         else
         {
             Time.timeScale = 1;
+            Cursor.visible = false;
             isPaused = false;
             canvas.enabled = false;
         }

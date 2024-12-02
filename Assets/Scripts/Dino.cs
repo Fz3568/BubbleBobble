@@ -164,8 +164,6 @@ public class Dino : MonoBehaviour
             movement.y = jumpForce * 0.8f;
             HasDoubleJump = false;
         }
-        
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -184,3 +182,4 @@ public class Dino : MonoBehaviour
         }
     }
 }
+

@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     void RestartScene()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Cursor.visible = false;
     }
 
     public void NextStage()

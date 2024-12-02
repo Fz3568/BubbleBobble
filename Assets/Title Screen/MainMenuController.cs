@@ -17,15 +17,18 @@ public class MainMenuController : MonoBehaviour
     public void MainMenu()
     {
         LoadScene(0);
+        Cursor.visible = true;
     }
     public void PlayGame()
     {
         LoadScene(1);
+        Cursor.visible = false;
     }
 
     public void SettingsMenu()
     {
         LoadScene(2);
+        Cursor.visible = true;
     }
 
     public void QuitGame()
