@@ -8,7 +8,7 @@ public class TutorialTextManager : MonoBehaviour
     
     [SerializeField] GameObject Level1;
 
-    [SerializeField] private Text text;
+    [SerializeField] Text text;
    
     // Update is called once per frame
     void Update()

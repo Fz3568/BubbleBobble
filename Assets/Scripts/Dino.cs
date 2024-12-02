@@ -47,12 +47,8 @@ public class Dino : MonoBehaviour
     {
         BubbleSprite.SetActive(LevelTransitionStart.isInTransition);
         
-        //supposedly this thing reads input from the "player input" object and spits out a vector2
+        //supposedly this thing reads input from the "player input" object and spits out a vector
         Vector2 input = playerInput.actions["Move"].ReadValue<Vector2>();
-        
-        
-        //Sets the X movement equal to the speed in the positive or negative direction
-        //movement.x = Input.GetAxis("Horizontal") * speed;
         movement.x = input.x * speed;
 
         //checks if there is a collider on the "Ground" layer below the player
@@ -78,13 +74,6 @@ public class Dino : MonoBehaviour
                 CeillingTouch = true;
             }
         }
-
-        //Sets the Y movement to the Jump Force if either W or the UpArrow are pushed, and there is Ground below
-        /*if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && GroundTouch)
-        {
-            movement.y = jumpForce;
-        }
-        */
         
         //so I THINK this reads from "player input" object, and when you press the designated key that's assigned
         //it will basically say "input triggered" and do things
